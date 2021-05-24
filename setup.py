@@ -14,6 +14,7 @@ setup(
   packages = ['makeapi'],
   version = version,
   license='MIT',
+  url="https://github.com/FrostiiWeeb/makeapi",
   long_description=long_desc,
 long_description_content_type="text/markdown",        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'A small pypi project, that allows you to make your own API.',   # Give a short description about your library
