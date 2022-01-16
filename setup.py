@@ -11,13 +11,14 @@ with open("README.md", "r") as f:
 
 setup(
   name = 'makeapi',
+  install_requires=['jinja2'],
   packages = ['makeapi'],
   version = version,
   license='MIT',
   url="https://github.com/FrostiiWeeb/makeapi",
   long_description=long_desc,
 long_description_content_type="text/markdown",        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
-  description = 'A small pypi project, that allows you to make your own API.',   # Give a short description about your library
+  description = 'A package to make an API.',   # Give a short description about your library
   author = 'Alex Hutz',                   # Type in your name
   author_email = 'frostiiweeb@gmail.com',   # Provide either the link to your github or to your website
   keywords = ['web'],   # Keywords that define your package best
@@ -27,8 +28,7 @@ long_description_content_type="text/markdown",        # Chose a license from her
     'Topic :: Software Development :: Build Tools',
     'License :: OSI Approved :: MIT License',   # Again, pick a license
     'Programming Language :: Python :: 3',      #Specify which pyhton versions that you want to support
-    'Programming Language :: Python :: 3.4',
-    'Programming Language :: Python :: 3.5',
-    'Programming Language :: Python :: 3.6',
+    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.9',
   ],
 )
