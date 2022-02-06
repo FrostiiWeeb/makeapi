@@ -1,18 +1,19 @@
-try:
-	import jinja2
-	from jinja2 import Environment, PackageLoader, select_autoescape
-except ImportError:
-	jinja2 = None
+import typing, pathlib
+import aiofiles
 
-if not jinja2:
-	raise ImportError("Jinja2 was not found.")
 
-class JinjaTemplates(Environment):
-	def __init__(self, application, reload : bool = False, *args, **kwargs):
-		self.application = application
-		super().__init__(loader=PackageLoader(application.title), auto_reload=reload, autoescape=select_autoescape(), *args, **kwargs)
+class TemplateLoader:
+    """
+    Asynchrounously load template files using aiofiles.
+    """
 
-	def render_template(self, template_name : str, *args, **kwargs):
-		template = super().get_template(template_name)
-		template = template.render(*args, **kwargs)
-		return template
+    def __init__(self, directory: typing.Union[pathlib.Path, str]) -> None:
+        self.dir = directory
+
+    async def load(self, name: str, **kwargs):
+        async with aiofiles.open(f"{self.dir}/{name}", "r+") as f:
+            real_content = """"""
+            for name in kwargs:
+                async for line in f:
+                    real_content += line.replace(name, kwargs[name])
+        return real_content
